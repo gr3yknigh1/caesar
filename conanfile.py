@@ -13,6 +13,8 @@ class CaesarRecipe(ConanFile):
     options = {"shared": [True, False]}
     default_options = {"shared": False}
 
+    requires = ("nocheck/0.0.1",)
+
     def generate(self):
         deps = CMakeDeps(self)
         deps.generate()
