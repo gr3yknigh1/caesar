@@ -17,6 +17,7 @@
 #define ASCII_UPPER_LAST 'Z'
 #define ASCII_LOWER_FIRST 'a'
 #define ASCII_LOWER_LAST 'z'
+#define ASCII_ALPHA_COUNT 26
 
 char
 Caesar_ShiftChar(int c, int shift)
@@ -28,17 +29,19 @@ Caesar_ShiftChar(int c, int shift)
     int first = isupper(c) ? ASCII_UPPER_FIRST : ASCII_LOWER_FIRST;
     int last = isupper(c) ? ASCII_UPPER_LAST : ASCII_LOWER_LAST;
 
-    if (c + shift > last) {
-        shift = shift - last;
+    int result = 0;
+
+    result = c + shift;
+
+    while (result > last) {
+        result = first + (result - last) - 1;
     }
 
-    if (c + shift < first) {
-        shift = last + shift;
+    while (result < first) {
+        result = last - (first - result) + 1;
     }
 
-    char result = c + shift;
-
-    return result;
+    return (char)result;
 }
 
 void
