@@ -21,8 +21,6 @@
 #define CAESAR_API
 #endif
 
-typedef int bool32_t;
-
 CAESAR_API char Caesar_ShiftChar(int c, int shift);
 CAESAR_API void Caesar_ShiftMessage(char *outBuffer, size_t outBufferSize, const char *message, int shift);
 

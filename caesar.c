@@ -17,7 +17,7 @@
 #define ASCII_UPPER_LAST 'Z'
 #define ASCII_LOWER_FIRST 'a'
 #define ASCII_LOWER_LAST 'z'
-#define ASCII_ALPHA_COUNT 26
+#define ASCII_ALPHA_COUNT (ASCII_UPPER_LAST - ASCII_UPPER_FIRST)
 
 char
 Caesar_ShiftChar(int c, int shift)
